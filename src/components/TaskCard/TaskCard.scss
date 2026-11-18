@@ -1,0 +1,216 @@
+@layer components {
+  .task-card {
+    position: relative;
+    min-height: 114px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 15px;
+    background: var(--color-card);
+    color: var(--color-text);
+    font-size: 14px;
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--color-accent);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    &.task-card--overdue,
+    &.task-card--overdue:hover,
+    &.task-card--overdue:focus-within {
+      border-color: var(--color-overdue);
+      border-width: 2px;
+    }
+
+    &__field {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px;
+      margin: 0 0 12px;
+      font-size: 14px;
+      line-height: 1;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &__label {
+      color: var(--color-text-muted);
+    }
+
+    &__field strong {
+      min-width: 0;
+      flex: 1;
+      color: var(--color-text-strong);
+      font-size: 14px;
+      font-weight: 700;
+      overflow-wrap: break-word;
+    }
+
+    &__date {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    &__description {
+      display: -webkit-box;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    &__actions {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      display: flex;
+      gap: 12px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 160ms ease, visibility 0s linear 160ms;
+    }
+
+    &:hover &__actions,
+    &:focus-within &__actions {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+
+    &__edit-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 50%;
+      padding: 4px;
+      background: transparent;
+      color: var(--color-text);
+      cursor: pointer;
+    }
+
+    &__actions button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    button img {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    &__edit {
+      display: grid;
+      gap: 8px;
+      color: var(--color-text);
+    }
+
+    &__edit label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--color-text-muted);
+      font-size: 14px;
+    }
+
+    &__edit input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 3px;
+      padding: 4px 8px;
+      outline: 0;
+      background: rgba(0, 0, 0, 0.25);
+      color: var(--color-text);
+    }
+
+    &__edit input:focus {
+      border-color: var(--color-accent);
+    }
+
+    &__edit-actions button {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &__edit-actions button:last-child {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    [role='alert'] {
+      color: var(--color-overdue);
+      font-size: 12px;
+    }
+
+    @container task-cards (max-width: 200px) {
+      & {
+        padding: 14px;
+        font-size: 13px;
+      }
+
+      &__field,
+      &__field strong,
+      &__edit label {
+        font-size: 13px;
+      }
+
+      &__label {
+        font-size: 11px;
+      }
+
+      &__field {
+        gap: 4px;
+      }
+    }
+
+    @container task-cards (max-width: 250px) {
+      &__field {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      &__field strong {
+        flex: 0 1 auto;
+        width: 100%;
+      }
+    }
+
+    @container task-cards (max-width: 160px) {
+      &__date {
+        font-size: 12px;
+      }
+    }
+
+    @container task-cards (min-width: 251px) {
+      &__description {
+        display: block;
+        overflow: visible;
+        -webkit-box-orient: initial;
+        -webkit-line-clamp: unset;
+      }
+    }
+
+    @media (max-width: 767px) {
+      & {
+        min-width: 0;
+      }
+    }
+  }
+}
