@@ -1,0 +1,41 @@
+@layer components {
+  .kanban-board-viewport {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 0 0 12px;
+    scrollbar-color: rgba(255, 255, 255, 0.38) rgba(255, 255, 255, 0.08);
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.38);
+    }
+  }
+
+  .kanban-board {
+    display: grid;
+    width: 100%;
+    min-width: 768px;
+    box-sizing: border-box;
+    padding-inline: clamp(12px, 2.5vw, 40px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 2.5vw, 40px);
+  }
+
+  @media (min-width: 768px) {
+    .kanban-board {
+      min-width: 0;
+    }
+  }
+
+}
