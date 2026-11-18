@@ -1,0 +1,66 @@
+{
+  "name": "@alekstar79/react-kanban",
+  "description": "A React and TypeScript kanban board with task filtering and local persistence.",
+  "author": "Aleksey Tarasenko <alekstar79@yandex.ru>",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "react",
+    "typescript",
+    "webpack",
+    "kanban",
+    "frontend"
+  ],
+  "homepage": "https://alekstar79.github.io/react-kanban/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekstar79/react-kanban.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alekstar79/react-kanban/issues"
+  },
+  "engines": {
+    "node": "18.18.0"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "dev": "npm run start",
+    "build": "npm run typecheck && webpack --mode production",
+    "build:pages": "npm run typecheck && PUBLIC_PATH=/react-kanban/ webpack --mode production",
+    "preview": "npx serve dist",
+    "preview:pages": "npx serve dist",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "jsdom": "^25.0.1",
+    "mini-css-extract-plugin": "^2.10.2",
+    "sass": "^1.108.2",
+    "sass-loader": "^17.1.0",
+    "serve": "^14.2.4",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.4.6",
+    "vitest": "^3.2.7",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
