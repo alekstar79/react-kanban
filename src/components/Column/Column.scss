@@ -1,0 +1,57 @@
+@layer components {
+  .kanban-column {
+    min-width: 0;
+    min-height: 484px;
+    container-name: kanban-column;
+    container-type: inline-size;
+    border: 0;
+    border-radius: 4px;
+    padding: 32px 16px;
+    background: var(--color-panel);
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--color-text-strong);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+
+      img {
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+      }
+    }
+
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% + 32px);
+      box-sizing: border-box;
+      margin-inline: -16px;
+      gap: 16px;
+      container-name: task-cards;
+      container-type: inline-size;
+
+      > .task-card {
+        margin-inline: 16px;
+      }
+    }
+
+    @container kanban-column (max-width: 320px) {
+      h2 {
+        gap: 8px;
+        font-size: 20px;
+
+        img {
+          width: 22px;
+          height: 22px;
+          flex-basis: 22px;
+        }
+      }
+    }
+  }
+}
