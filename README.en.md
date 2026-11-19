@@ -8,23 +8,33 @@
 ![SCSS](https://img.shields.io/badge/SCSS-CSS3-CC6699?style=flat&logo=sass&logoColor=white)
 ![Responsive](https://img.shields.io/badge/responsive-768–1920px-brightgreen?style=flat)
 
-**[Demo](https://alekstar79.github.io/react-kanban/)**
+**[Live Demo](https://alekstar79.github.io/react-kanban/)**
 
 ---
 
 ## Table of Contents
 
-* [About](#about)
-* [Key Features](#key-features)
-* [Implementation](#implementation)
-  * [State and Persistence](#state-and-persistence)
-  * [Drag & Drop](#drag--drop)
-  * [Search](#search)
-  * [Responsive Layout](#responsive-layout)
-  * [Render Optimization](#render-optimization)
-* [Installation and Usage](#installation-and-usage)
-* [Testing](#testing)
-* [Project Structure](#project-structure)
+<!-- TOC -->
+* [React Kanban](#react-kanban)
+  * [Table of Contents](#table-of-contents)
+  * [About](#about)
+  * [Key Features](#key-features)
+  * [Implementation](#implementation)
+    * [State and Persistence](#state-and-persistence)
+    * [Drag & Drop](#drag--drop)
+    * [Search](#search)
+    * [Responsive Layout](#responsive-layout)
+    * [Render Optimization](#render-optimization)
+  * [Installation and Usage](#installation-and-usage)
+    * [Requirements](#requirements)
+    * [Install dependencies](#install-dependencies)
+    * [Run in development mode](#run-in-development-mode)
+    * [Build for production](#build-for-production)
+    * [Available Scripts](#available-scripts)
+  * [Testing](#testing)
+  * [Project Structure](#project-structure)
+  * [License](#license)
+<!-- TOC -->
 
 ---
 
@@ -61,7 +71,7 @@ Native implementation via `dragstart`, `dragover`, `drop`, `dragend`. Dragging i
 
 ### Search
 
-A single search field is normalised: the query is lowercased, matched as a substring against `text`, and also against the formatted `startDay` / `endDay` strings. Date search is incremental: a partial query `19` returns every card where any date contains `19`, while `19.12.2024` narrows the result to an exact match.
+A single search field is normalized: the query is lowercased, matched as a substring against `text`, and also against the formatted `startDay` / `endDay` strings. Date search is incremental: a partial query `19` returns every card where any date contains `19`, while `19.12.2024` narrows the result to an exact match.
 
 ### Responsive Layout
 
