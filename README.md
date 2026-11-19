@@ -1,3 +1,5 @@
+[English](README.en.md) | [Русский](README.md)
+
 # React Kanban
 
 ![React](https://img.shields.io/badge/react-18-61DAFB?style=flat&logo=react&logoColor=black)
